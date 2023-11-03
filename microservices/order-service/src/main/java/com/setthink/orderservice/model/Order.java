@@ -1,14 +1,12 @@
 package com.setthink.orderservice.model;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.util.List;
 
 @Entity
-@Table(name="t_orders")
+@Table(name = "t_orders")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -18,5 +16,5 @@ public class Order {
     private Long id;
     private String orderNumber;
     @OneToMany(cascade = CascadeType.ALL)
-    private List<OrderLineItems> orderLineItems;
+    private List<OrderLineItems> orderLineItemsList;
 }
